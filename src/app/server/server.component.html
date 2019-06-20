@@ -1,0 +1,31 @@
+<div class="container">
+  <app-cockpit (onServerCreated)="serverCreated($event)" (onBluePrintCreated)="bluePrintCreated($event)"></app-cockpit>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onFirstChange()">Change First Element</button>
+      <button class="btn btn-danger" (click)="deleFirstElement()">Delete First Element</button>
+      <app-server-element *ngFor="let element of serverElements" [element]="element">
+        NG Content of app-server goes here. Local properties of app-server component can be accessed here like
+        {{ element.name }}
+        <span #contentSpan>Span Content</span>
+      </app-server-element>
+      <p appBasicFormatter>this is my first directive</p>
+      <!-- <p appBetterFormatter>this is my first directive</p>  -->
+      <!-- <p appBetterFormatter [defaultColor]="'yellow'" [highlightColor]="'red'">this is my first directive</p> -->
+      <p [appBetterFormatter]="'blue'" [defaultColor]="'yellow'">this is my first directive</p>
+      <p *appUnless="true">unless true</p>
+      <p *appUnless="false">unless false</p>
+
+      <div [ngSwitch]="day">
+        <p *ngSwitchCase="1">Monday</p>
+        <p *ngSwitchCase="2">Tuesday</p>
+        <p *ngSwitchCase="3">Wednesday</p>
+        <p *ngSwitchCase="4">Thusday</p>
+        <p *ngSwitchCase="5">Friday</p>
+        <p *ngSwitchCase="6">Saturday</p>
+        <p *ngSwitchCase="7">Sunday</p>
+      </div>
+    </div>
+  </div>
+</div>
