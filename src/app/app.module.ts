@@ -21,6 +21,7 @@ import { DropDownDirective } from './directives/dropdown.directive';
 import { BankComponent } from './bank/bank.component';
 import { AccountComponent } from './bank/account/account.component';
 import { NewAccountComponent } from './bank/new-account/new-account.component';
+import { ShoppingListService } from './shopping-list/shopping-list-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { NewAccountComponent } from './bank/new-account/new-account.component';
     NewAccountComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
