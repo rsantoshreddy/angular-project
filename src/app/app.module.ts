@@ -22,6 +22,20 @@ import { BankComponent } from './bank/bank.component';
 import { AccountComponent } from './bank/account/account.component';
 import { NewAccountComponent } from './bank/new-account/new-account.component';
 import { ShoppingListService } from './shopping-list/shopping-list-service';
+import { CourseRouteComponent } from './course-route/course-route.component';
+import { HomeComponent } from './course-route/home/home.component';
+import { UsersComponent } from './course-route/users/users.component';
+import { ServersComponent } from './course-route/servers/servers.component';
+import { ServerComponent as RouteServerComponent } from './course-route/servers/server/server.component';
+import { UserComponent } from './course-route/users/user/user.component';
+import { ServerEditComponent } from './course-route/servers/server-edit/server-edit.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRouteModule } from './app-route.module';
+import { AppGuard } from './guards/app-guard.service';
+import { AuthServise } from './guards/auth.service';
+import { CanDeactivateGuard } from './guards/can-deactivate.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './course-route/servers/services/server-resolver.service';
 
 @NgModule({
   declarations: [
@@ -42,10 +56,19 @@ import { ShoppingListService } from './shopping-list/shopping-list-service';
     DropDownDirective,
     BankComponent,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    CourseRouteComponent,
+    HomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    ServerEditComponent,
+    NotFoundComponent,
+    RouteServerComponent,
+    ErrorPageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [ShoppingListService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, AppRouteModule],
+  providers: [ShoppingListService, AuthServise, AppGuard, CanDeactivateGuard, ServerResolver],
+  bootstrap: [CourseRouteComponent]
 })
 export class AppModule {}

@@ -1,0 +1,8 @@
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users" (click)="goToUser(user)">
+      User sid is :{{ user.id }} for {{ user.name }}
+    </li>
+  </ul>
+  <button class="btn btn-primary">Go to home</button>
+</div>

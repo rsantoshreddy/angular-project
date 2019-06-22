@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let server of servers">
+          <!-- <a [routerLink]="['/servers', server.id, 'edit']" [queryParams]="{ allowEdit: 1 }" [fragment]="'loading'"
+            >Server id is: {{ server.id }} name: {{ server.name }}</a
+          > -->
+          <a
+            [routerLink]="['/servers', server.id]"
+            [queryParams]="{ allowEdit: server.id === 1 }"
+            [fragment]="'loading'"
+            >Server id is: {{ server.id }} name: {{ server.name }}</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" (click)="navigateToServers()">Go to users</button>
+</div>

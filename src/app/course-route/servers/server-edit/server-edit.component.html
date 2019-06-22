@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-12" *ngIf="allowEdit; else editServer">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" #nameInput />
+    </div>
+    <button (click)="updateServer()">Update</button>
+  </div>
+  <ng-template #editServer>
+    <p>You are not allowed to edit</p>
+  </ng-template>
+</div>
