@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+# Best practices
+
+## File Naming conventions
+
+Please use file names with below pattern.</br>
+`[name of the file].[component/service/module].[extention]` </br>
+* e.g. </br>
+  - home.component.ts</br>
+  - home.component.html</br>
+  - home.service.ts</br>
+  - home.module.ts</br>
