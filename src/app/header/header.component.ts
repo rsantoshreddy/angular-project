@@ -7,9 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
-  @Output('changeFeature') changeFeature = new EventEmitter<string>();
+  // @Output('changeFeature') changeFeature = new EventEmitter<string>();
 
   laodFeature(feature: string) {
-    this.changeFeature.emit(feature);
+    // this.changeFeature.emit(feature);
   }
 }

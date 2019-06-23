@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'course-project';
   featureLoaded = 'recipe';
 
-  onFeatureChange(feature: string): void {
-    this.featureLoaded = feature;
-  }
+  // onFeatureChange(feature: string): void {
+  //   this.featureLoaded = feature;
+  // }
 }

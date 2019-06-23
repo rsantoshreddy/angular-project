@@ -1,7 +1,9 @@
-<app-header (changeFeature)="onFeatureChange($event)"></app-header>
+<!-- <app-header (changeFeature)="onFeatureChange($event)"></app-header> -->
+<app-header></app-header>
 <div class="container">
   <div class="col-md-12">
-    <app-recipe *ngIf="featureLoaded === 'recipe'"></app-recipe>
-    <app-shopping-list *ngIf="featureLoaded !== 'recipe'"></app-shopping-list>
+    <router-outlet></router-outlet>
+    <!-- <app-recipe *ngIf="featureLoaded === 'recipe'"></app-recipe>
+    <app-shopping-list *ngIf="featureLoaded !== 'recipe'"></app-shopping-list> -->
   </div>
 </div>

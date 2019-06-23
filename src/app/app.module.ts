@@ -36,6 +36,9 @@ import { AuthServise } from './guards/auth.service';
 import { CanDeactivateGuard } from './guards/can-deactivate.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './course-route/servers/services/server-resolver.service';
+import { MainAppRoute } from './main-app-routing/app-route.module';
+import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -65,10 +68,12 @@ import { ServerResolver } from './course-route/servers/services/server-resolver.
     ServerEditComponent,
     NotFoundComponent,
     RouteServerComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, AppRouteModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, /*AppRouteModule,*/ MainAppRoute],
   providers: [ShoppingListService, AuthServise, AppGuard, CanDeactivateGuard, ServerResolver],
-  bootstrap: [CourseRouteComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
