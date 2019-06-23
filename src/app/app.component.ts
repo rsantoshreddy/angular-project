@@ -45,6 +45,11 @@ export class AppComponent implements OnInit, OnDestroy {
         console.log('Completed');
       }
     );
+
+    setTimeout(() => {
+      this.dynamicNumberSubscription.unsubscribe();
+      this.myObserbableSubscription.unsubscribe();
+    }, 10000);
   }
 
   ngOnDestroy() {
