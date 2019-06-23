@@ -39,6 +39,7 @@ import { ServerResolver } from './course-route/servers/services/server-resolver.
 import { MainAppRoute } from './main-app-routing/app-route.module';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { SubjectService } from './shared/subject.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     RecipeEditComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, /*AppRouteModule,*/ MainAppRoute],
-  providers: [ShoppingListService, AuthServise, AppGuard, CanDeactivateGuard, ServerResolver],
+  providers: [ShoppingListService, AuthServise, AppGuard, CanDeactivateGuard, ServerResolver, SubjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
