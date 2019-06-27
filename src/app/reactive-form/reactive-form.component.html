@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form (ngSubmit)="onSubmit()" [formGroup]="licenseForm">
+        <div class="form-group row">
+          <div class="col-sm-10 col-md-10 col-lg-7" formGroupName="licenseFile">
+            <input
+              type="text"
+              placeholder="Select a file by clicking browse"
+              class="form-control"
+              disabled
+              formControlName="filename"
+              name="filename"
+            />
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-5">
+            <label for="lisence" class="btn btn-primary col-md-2">Browse</label>
+            <input id="lisence" (change)="onFileChange($event)" type="file" name="licence" class="form-control hide" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username">User Name</label>
+          <input
+            id="username"
+            formControlName="username"
+            type="text"
+            placeholder="User Name"
+            name="username"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            formControlName="password"
+            type="password"
+            placeholder="Password"
+            name="password"
+            class="form-control"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
