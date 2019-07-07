@@ -42,6 +42,7 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 import { SubjectService } from './shared/subject.service';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { RecipeService } from './recipe/recipe-service';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,15 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ReactiveFormComponent
   ],
   imports: [BrowserModule, /*AppRoutingModule,*/ FormsModule, /*AppRouteModule,*/ MainAppRoute, ReactiveFormsModule],
-  providers: [ShoppingListService, AuthServise, AppGuard, CanDeactivateGuard, ServerResolver, SubjectService],
+  providers: [
+    ShoppingListService,
+    AuthServise,
+    AppGuard,
+    CanDeactivateGuard,
+    ServerResolver,
+    SubjectService,
+    RecipeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

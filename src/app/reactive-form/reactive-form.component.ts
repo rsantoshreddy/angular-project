@@ -27,14 +27,16 @@ export class ReactiveFormComponent implements OnInit {
     if (event.target.files && event.target.files.length > 0) {
       let file = event.target.files[0];
       // console.log(file instanceof Blob);
-      reader.readAsText(file);
+      // reader.readAsText(file);
+      reader.readAsBinaryString(file);
       reader.onload = () => {
-        const fileContentAsJson = JSON.parse(<string>reader.result);
-        this.licenseForm.get('licenseFile').setValue({
-          filename: file.name,
-          serialNumber: fileContentAsJson.serialNumber,
-          file: file
-        });
+        console.log(reader.result);
+        // const fileContentAsJson = JSON.parse(<string>reader.result);
+        // this.licenseForm.get('licenseFile').setValue({
+        //   filename: file.name,
+        //   serialNumber: fileContentAsJson.serialNumber,
+        //   file: file
+        // });
       };
     }
   }
