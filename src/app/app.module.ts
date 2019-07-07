@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +40,8 @@ import { MainAppRoute } from './main-app-routing/app-route.module';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 import { SubjectService } from './shared/subject.service';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -71,9 +73,11 @@ import { SubjectService } from './shared/subject.service';
     RouteServerComponent,
     ErrorPageComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    FormComponent,
+    ReactiveFormComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, /*AppRouteModule,*/ MainAppRoute],
+  imports: [BrowserModule, /*AppRoutingModule,*/ FormsModule, /*AppRouteModule,*/ MainAppRoute, ReactiveFormsModule],
   providers: [ShoppingListService, AuthServise, AppGuard, CanDeactivateGuard, ServerResolver, SubjectService],
   bootstrap: [AppComponent]
 })
