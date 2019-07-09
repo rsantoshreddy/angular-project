@@ -43,6 +43,9 @@ import { SubjectService } from './shared/subject.service';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { RecipeService } from './recipe/recipe-service';
+import { PipesComponent } from './pipes/pipes.component';
+import { Shorten } from './pipes/custom.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,10 @@ import { RecipeService } from './recipe/recipe-service';
     RecipeStartComponent,
     RecipeEditComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    PipesComponent,
+    Shorten,
+    FilterPipe
   ],
   imports: [BrowserModule, /*AppRoutingModule,*/ FormsModule, /*AppRouteModule,*/ MainAppRoute, ReactiveFormsModule],
   providers: [
@@ -88,6 +94,6 @@ import { RecipeService } from './recipe/recipe-service';
     SubjectService,
     RecipeService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [PipesComponent]
 })
 export class AppModule {}

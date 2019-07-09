@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      App Status: {{ status | async }}
+      <hr />
+      <input type="text" [(ngModel)]="filterKey" />&nbsp;
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <hr />
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of data | filter: filterKey:'name'">
+          <span>{{ item.name | shorten: 5 }} |</span>
+          <span> {{ item.status | uppercase }} |</span>
+          <span> {{ item.date | date: 'fullDate' | uppercase }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
